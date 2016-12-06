@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+   <style type="text/css">
+	body {
+		background-color: #e7e7e7;
+		color: #000;
+		font-size: 30px;
+	}
+	.clock {
+		width: 300px;
+		margin: 0 auto;
+ 		font-weight: bold;
+	}
+  
+   </style>
+	<script type="text/javascript"> 
+		function Double (num) {
+				if (num<10) 
+					{
+						return '0'+num
+					}
+				else {
+						return ''+num
+				}
+		}
+	window.onload =function  () {
+			  var oBtn = document.getElementById('btn');
+		      var oImg = document.getElementById('clock').getElementsByTagName('img');
+			// var arr = ['1','1','1','5','7','5']	
+		 	// adate = adate.getHours()+adate.getMinutes()+adate.getSeconds(); 
+		  	   function update () {
+		  	   	var adate = new Date();
+		  	     var Str = ''+Double(adate.getHours())+Double(adate.getMinutes()) +Double(adate.getSeconds())
+		  	   	for (var i = 0; i < oImg.length; i++) {
+		  	   			 oImg[i].src = 'images数字0-9/'+Str.charAt(i)+ '.png'
+  	   	}
+  	   
+  	   }
+  	   setInterval(update,1000);
+  	   update();
+	}
+	</script>
+</head>
+<body>
+	<!-- <input type="button" value="设置时间" id="btn" > -->
+	<div class="clock" id="clock">
+	<img src="images数字0-9/0.png" height="37" width="25">
+	<img src="images数字0-9/1.png" height="37" width="25">
+	:
+	<img src="images数字0-9/2.png" height="37" width="25">
+	<img src="images数字0-9/3.png" height="37" width="25">
+	:
+	<img src="images数字0-9/4.png" height="37" width="25">
+	<img src="images数字0-9/5.png" height="37" width="25">
+</div>
+</body>
+</html>
